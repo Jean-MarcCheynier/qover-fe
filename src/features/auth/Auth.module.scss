@@ -1,0 +1,48 @@
+.Auth {
+  height: 332px;
+  padding: 30px 20px 20px;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 #d4dce2;
+  background-color: #fff;
+  color: #5b7289;
+
+  .title {
+    margin: 1em 0em;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .helper {
+    margin: 1em 0em;
+    font-size: 12px;
+  }
+}
+
+.AuthBg {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(122deg, #317bda -6%, #33c3c8);
+  .header {
+    margin-bottom: 30px;
+    color: #fff;
+    line-height: 30px;
+    font-size: 9px;
+    padding-left: 100px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .container {
+    width: 350px;
+    margin: auto;
+    flex: 1;
+  }
+  .footer {
+    text-align: center;
+    color: #fff;
+    line-height: 49px;
+    font-size: 9px;
+    height: 49px;
+    border-top: solid 1px rgba(255, 255, 255, 0.2);
+  }
+}
