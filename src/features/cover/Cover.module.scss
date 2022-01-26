@@ -1,79 +1,75 @@
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import '/src/theme-bootstrap/qover-variables.scss';
 
-.row > button {
-  margin-left: 4px;
-  margin-right: 8px;
+.CoverOption {
+  height: 100vh;
+  background-image: url('../../../public/img/background-travel.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  .switch {
+    display: inline-block;
+    padding: 5px;
+    input {
+      width: 50px;
+      height: 30px;
+      margin: 0 10px;
+      padding: 4px 4px 4px 24px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  .link {
+    color: $qover-cyan;
+    text-align: center;
+  }
 }
-
-.row:not(:last-child) {
-  margin-bottom: 16px;
-}
-
-.value {
-  font-size: 78px;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-top: 2px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.button {
-  appearance: none;
-  background: none;
-  font-size: 32px;
-  padding-left: 12px;
-  padding-right: 12px;
-  outline: none;
-  border: 2px solid transparent;
-  color: rgb(112, 76, 182);
-  padding-bottom: 4px;
-  cursor: pointer;
-  background-color: rgba(112, 76, 182, 0.1);
-  border-radius: 2px;
-  transition: all 0.15s;
-}
-
-.textbox {
-  font-size: 32px;
-  padding: 2px;
-  width: 64px;
+.CoverDetails {
   text-align: center;
-  margin-right: 4px;
+  .Button {
+    width: 80%;
+  }
+  &.selected {
+    background-color: $qover-cyan;
+    color: white;
+    .item {
+      background-color: $qover-cyan;
+      color: white;
+    }
+    .Button {
+      background-color: white;
+      color: $qover-cyan;
+      border-color: $qover-cyan;
+    }
+  }
+  &.notSelected {
+    .price {
+      color: $qover-cyan;
+    }
+    .Button {
+      background-color: $qover-cyan;
+      color: white;
+      border-color: $qover-cyan;
+    }
+  }
+  .title{
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: lowercase;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
 }
 
-.button:hover,
-.button:focus {
-  border: 2px solid rgba(112, 76, 182, 0.4);
-}
-
-.button:active {
-  background-color: rgba(112, 76, 182, 0.2);
-}
-
-.asyncButton {
-  composes: button;
-  position: relative;
-}
-
-.asyncButton:after {
-  content: '';
-  background-color: rgba(112, 76, 182, 0.15);
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  transition: width 1s linear, opacity 0.5s ease 1s;
-}
-
-.asyncButton:active:after {
-  width: 0%;
-  opacity: 1;
-  transition: 0s;
+.CoverRequest {
+  background-image: linear-gradient(122deg, #317bda -6%, #33c3c8);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  padding-top: 50px;
+  .card {
+    border-radius: 0px;
+    margin: auto;
+    width: 80vh;
+    max-width: 600px;
+  }
 }

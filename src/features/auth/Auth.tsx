@@ -1,14 +1,10 @@
-import { RecordWithTtl } from 'dns';
 import React from 'react';
 import { Image } from 'react-bootstrap';
 import QoverButton from '../../components/QoverButton';
 import styles from './Auth.module.scss';
+import AuthForm from './AuthForm';
 
-type AuthBgProps = {
-  children: React.ReactNode
-}
-
-function AuthBg({ children }: AuthBgProps) {
+function Auth() {
   return (
     <div className={styles.AuthBg}>
       <div className={styles.header}>QOVER.ME</div>
@@ -16,7 +12,7 @@ function AuthBg({ children }: AuthBgProps) {
         <div className="text-center my-3">
           <Image src="img/qover-v-blue.svg" />
         </div>
-        {children}
+        <AuthForm />
         <br />
         <QoverButton className="w-100 text-white" variant="outline-primary">
           Don&apos;t have access?
@@ -28,4 +24,4 @@ function AuthBg({ children }: AuthBgProps) {
   );
 }
 
-export default AuthBg;
+export default Auth;

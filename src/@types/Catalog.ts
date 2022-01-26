@@ -1,6 +1,13 @@
-export type Cover = { [coverType: string]: { basedPrice: number, carMultiplier: number} }
+export type CoverMap = { [coverType: string]: {
+  basePrice: number
+  carPriceMultiplier: number
+  minAge: number,
+}}
 
-export type Catalog = {
+export type CatalogItem = {
+  _id: string;
   brand: string;
-  cover: Cover;
-}[]
+  coverOptions: CoverMap;
+}
+
+export type CatalogMap = { [id: string]: CatalogItem }

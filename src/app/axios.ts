@@ -7,7 +7,7 @@ export default class QoverAPI {
   public static getInstance() {
     if (!this.instance) {
       this.instance = axios.create({
-        baseURL: process.env.REACT_APP_VIRTUAL_ME_API_BASE_URL,
+        baseURL: process.env.REACT_APP_QOVER_API_BASE_URL,
         timeout: 15000,
         headers: {
           accept: '*/*',
@@ -23,7 +23,7 @@ export default class QoverAPI {
   public static initInterceptor(store: EnhancedStore) {
     this.getInstance().interceptors.request.use((req) => {
       const state = store.getState();
-      const token = state.auth.jwt;
+      const token = state.auth?.user?.access_token;
       if (req && req.headers) {
         req.headers.authorization = `Bearer ${token}`;
       }
